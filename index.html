@@ -4,10 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amund Strandå Kristiansen</title>
+    <title>Amund's hjemmeside</title>
     <style>
         aside {
             margin-bottom: 20px;
+        }
+                /* New styles for the header section */
+                .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f4f4f4; /* Light gray background */
+        }
+
+        .header img {
+            border-radius: 50%; /* Makes the image circular */
+            width: 150px;
+            height: 150px;
+            margin-right: 20px;
+        }
+
+        .contact-details {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
         }
     </style>
 </head>
@@ -16,7 +37,22 @@
 
     <!-- Header -->
     <h1>Amund Strandå Kristiansen</h1>
+    <div class="header">
+        <!-- Your picture -->
+        <img src="path_to_your_image.jpg" alt="Amund Strandå Kristiansen">
 
+        <!-- Contact details -->
+        <div class="contact-details">
+            <aside>
+                <a href="https://www.linkedin.com/in/ask96/">
+                    <img src="https://s3-us-west-2.amazonaws.com/secure.notion-static.com/093bfa4c-500c-4ccb-90ec-da5ba7bba8fe/LinkedIn_logo_initials.png" alt="LinkedIn Logo" width="40px">
+                    www.linkedin.com/in/ask96
+                </a>
+            </aside>
+            <aside>📧 <a href="mailto:amundskristiansen@gmail.com">amundskristiansen@gmail.com</a></aside>
+            <aside>☎️ <a href="tel:+4792850789">(+47)92850789</a></aside>
+        </div>
+    </div>
     <!-- Contact Details -->
     <aside>
         <a href="https://www.linkedin.com/in/ask96/">
@@ -67,7 +103,7 @@
     </ul>
 
     <!-- DSS- Departementenes sikkerhets- og servicetjeneste -->
-    <h3><a href="https://www.canon.no/" target="_blank">Canon Norge</a></h3>
+    <h3><a href="https://www.dss.dep.no/" target="_blank">Canon Norge</a></h3>
     <p><strong>Rådgiver innenfor IT-sikkerhet og risikostyring</strong></p>
     <p>08.2020-01.2022</p>
     <ul>
@@ -80,7 +116,7 @@
     </ul>
 
     <!-- Nordic Choice Hotels -->
-    <h3><a href="https://www.strawberry.no/" target="_blank">Nordic Choice Hotels</a></h3>    <p><strong>Service Manager</strong></p>
+    <h3><a href="https://www.strawberry.no/" target="_blank">Nordic Choice Hotels (Nå Strawberry)</a></h3>    <p><strong>Service Manager</strong></p>
     <p>09.2019-08.2020</p>
     <ul>
         <li>Ledet kartlegging og utbedringsprosjekt knyttet til nettsider uten tilstrekkelig høy personvern- og sikkerhetsstandard.</li>
