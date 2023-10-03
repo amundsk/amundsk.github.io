@@ -3,7 +3,7 @@
 /* Default light mode styles */
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: black;
     margin: 0;
     padding: 0;
@@ -45,11 +45,11 @@ h1, h2, h3 {
 @media (prefers-color-scheme: dark) {
     body {
         background-color: #121212;
-        color: #e0e0e0;
+        color: #919399;
     }
 
     a {
-        color: cyan;
+        color: rgb(110, 160, 160);
     }
 
     header {
