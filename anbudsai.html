@@ -136,6 +136,9 @@
 </html>
 
 <script>
+    // Define the server URL with your ngrok address
+    const serverUrl = 'https://eea6-84-211-171-237.ngrok-free.app';
+
     // Initially load available prompts and products
     window.onload = function() {
         loadInitialData();
@@ -152,12 +155,13 @@
         // Construct the full query
         var fullQuery = `${selectedPrompt} ${userInput} ${selectedProducts}`;
 
-        // Make an AJAX POST request to the Flask backend
-        fetch('http://127.0.0.1:5000/send_message', {
+        // Make an AJAX POST request to the Flask backend with the ngrok URL
+        fetch(`${serverUrl}/send_message`, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': '69420'
+            }),
             body: JSON.stringify({ message: fullQuery })
         })
         .then(response => response.json())
@@ -166,7 +170,7 @@
             appendMessage(`You: ${userInput}`, 'user');
             appendMessage(`Bot: ${data.response}`, 'bot');
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error.message));
     }
 
     function appendMessage(message, userType) {
@@ -178,16 +182,67 @@
     }
 
     function loadInitialData() {
-        fetch('http://127.0.0.1:5000/get_products_prompts')
+        // Use the ngrok URL for the GET request
+        fetch(`${serverUrl}/get_products_prompts`, {
+            headers: new Headers({
+                'ngrok-skip-browser-warning': '69420' // Include this header to bypass the warning
+            }),
+        })
         .then(response => response.json())
         .then(data => {
             populatePrompts(data.prompts);
             populateProducts(data.products);
             updateTimestamp();
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => console.error('Error:', error.message));
     }
 
+    function addProduct() {
+        var productInput = document.getElementById('new-product-input').value;
+        // Use the ngrok URL for the POST request
+        fetch(`${serverUrl}/add_product`, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': '69420' // Include this header to bypass the warning
+            }),
+            body: JSON.stringify({ product: productInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                populateProducts([productInput]);
+            }
+        })
+        .catch(error => console.error('Error:', error.message));
+    }
+
+    function addPrompt() {
+        var promptInput = document.getElementById('new-prompt-input').value;
+        // Use the ngrok URL for the POST request
+        fetch(`${serverUrl}/add_prompt`, {
+            method: 'POST',
+            headers: new Headers({
+                'Content-Type': 'application/json',
+                'ngrok-skip-browser-warning': '69420' // Include this header to bypass the warning
+            }),
+            body: JSON.stringify({ prompt: promptInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                populatePrompts([promptInput]);
+            }
+        })
+        .catch(error => console.error('Error:', error.message));
+    }
+
+    function updateTimestamp() {
+        var timestampSpan = document.getElementById('last-updated-time');
+        timestampSpan.textContent = new Date().toLocaleString();
+    }
+
+    // Helper functions to populate prompts and products
     function populatePrompts(prompts) {
         var promptSelect = document.getElementById('prompt-selection');
         prompts.forEach(prompt => {
@@ -211,6 +266,7 @@
         });
     }
 
+    // Helper function to get selected products
     function getSelectedProducts() {
         var selectedProducts = [];
         var checkboxes = document.querySelectorAll('#product-checkboxes input[type="checkbox"]:checked');
@@ -219,43 +275,6 @@
         });
         return selectedProducts.join(', ');
     }
-
-    function addProduct() {
-        var productInput = document.getElementById('new-product-input').value;
-        fetch('http://127.0.0.1:5000/add_product', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ product: productInput })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                populateProducts([productInput]);
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
-    function addPrompt() {
-        var promptInput = document.getElementById('new-prompt-input').value;
-        fetch('http://127.0.0.1:5000/add_prompt', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ prompt: promptInput })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                populatePrompts([promptInput]);
-            }
-        })
-        .catch(error => console.error('Error:', error));
-    }
-
     function updateTimestamp() {
         var timestampSpan = document.getElementById('last-updated-time');
         timestampSpan.textContent = new Date().toLocaleString();
