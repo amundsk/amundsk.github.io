@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AnbudsAI</title>
+        <style>
+            body {
+                font-family: 'Arial', sans-serif;
+                background-color: #f4f4f4;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+            }
+    
+            #chat-container {
+                width: 95%;
+                max-width: 600px;
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                overflow: hidden;
+                display: flex;
+                flex-direction: column;
+            }
+    
+            #chat-window {
+                height: 300px;
+                overflow-y: auto;
+                padding: 10px;
+                border-bottom: 1px solid #ccc;
+            }
+    
+            #user-input {
+                border: none;
+                padding: 10px;
+                width: calc(100% - 60px);
+                margin: 0;
+            }
+    
+            button {
+                padding: 10px;
+                border: none;
+                background-color: #007bff;
+                color: white;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+    
+            button:hover {
+                background-color: #0056b3;
+            }
+    
+            #prompt-selection, #new-product-input, #new-prompt-input {
+                width: 95%;
+                max-width: 600px;
+                margin: 10px 0;
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+    
+            #product-checkboxes, #timestamp {
+                width: 95%;
+                max-width: 600px;
+                margin: 10px 0;
+                padding: 10px;
+                background-color: white;
+                border-radius: 5px;
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            }
+    
+            label {
+                display: block;
+                margin-bottom: 5px;
+            }
+    
+            .user, .bot {
+                margin-bottom: 5px;
+                padding: 5px 10px;
+                border-radius: 15px;
+                display: inline-block;
+                max-width: 80%;
+            }
+    
+            .user {
+                background-color: #8aa9ca;
+                color: white;
+                align-self: flex-end;
+            }
+    
+            .bot {
+                background-color: #eeeeee;
+                color: black;
+                align-self: flex-start;
+            }
+        </style>
+    </head>
+<body>
+    <div id="chat-container">
+        <!-- Chat messages will be displayed here -->
+        <div id="chat-window"></div>
+        
+        <!-- User input -->
+        <input type="text" id="user-input" placeholder="Type your message...">
+        <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <!-- Prompts selection -->
+    <select id="prompt-selection">
+        <!-- Options will be populated dynamically -->
+    </select>
+
+    <!-- Product checkboxes -->
+    <div id="product-checkboxes">
+        <!-- Checkboxes will be populated dynamically -->
+    </div>
+
+    <!-- Add product -->
+    <input type="text" id="new-product-input" placeholder="Add new product...">
+    <button onclick="addProduct()">Add Product</button>
+
+    <!-- Add prompt -->
+    <input type="text" id="new-prompt-input" placeholder="Add new prompt...">
+    <button onclick="addPrompt()">Add Prompt</button>
+
+    <!-- Timestamp -->
+    <div id="timestamp">Index last updated: <span id="last-updated-time"></span></div>
+
+    <script>
+        // JavaScript to handle dynamic content and server interaction
+    </script>
+</body>
+</html>
+
+<script>
+    // Initially load available prompts and products
+    window.onload = function() {
+        loadInitialData();
+    };
+
+    function sendMessage() {
+        var userInput = document.getElementById('user-input').value;
+        var selectedPrompt = document.getElementById('prompt-selection').value;
+        var selectedProducts = getSelectedProducts();
+
+        // Clear the input
+        document.getElementById('user-input').value = '';
+
+        // Construct the full query
+        var fullQuery = `${selectedPrompt} ${userInput} ${selectedProducts}`;
+
+        // Make an AJAX POST request to the Flask backend
+        fetch('http://127.0.0.1:5000/send_message', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ message: fullQuery })
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Append the response to the chat window
+            appendMessage(`You: ${userInput}`, 'user');
+            appendMessage(`Bot: ${data.response}`, 'bot');
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function appendMessage(message, userType) {
+        var chatWindow = document.getElementById('chat-window');
+        var messageDiv = document.createElement('div');
+        messageDiv.className = userType; // 'user' or 'bot'
+        messageDiv.textContent = message;
+        chatWindow.appendChild(messageDiv);
+    }
+
+    function loadInitialData() {
+        fetch('http://127.0.0.1:5000/get_products_prompts')
+        .then(response => response.json())
+        .then(data => {
+            populatePrompts(data.prompts);
+            populateProducts(data.products);
+            updateTimestamp();
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function populatePrompts(prompts) {
+        var promptSelect = document.getElementById('prompt-selection');
+        prompts.forEach(prompt => {
+            var option = document.createElement('option');
+            option.value = prompt;
+            option.textContent = prompt;
+            promptSelect.appendChild(option);
+        });
+    }
+
+    function populateProducts(products) {
+        var productContainer = document.getElementById('product-checkboxes');
+        products.forEach(product => {
+            var label = document.createElement('label');
+            var checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = product;
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(product));
+            productContainer.appendChild(label);
+        });
+    }
+
+    function getSelectedProducts() {
+        var selectedProducts = [];
+        var checkboxes = document.querySelectorAll('#product-checkboxes input[type="checkbox"]:checked');
+        checkboxes.forEach(checkbox => {
+            selectedProducts.push(checkbox.value);
+        });
+        return selectedProducts.join(', ');
+    }
+
+    function addProduct() {
+        var productInput = document.getElementById('new-product-input').value;
+        fetch('http://127.0.0.1:5000/add_product', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ product: productInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                populateProducts([productInput]);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function addPrompt() {
+        var promptInput = document.getElementById('new-prompt-input').value;
+        fetch('http://127.0.0.1:5000/add_prompt', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ prompt: promptInput })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                populatePrompts([promptInput]);
+            }
+        })
+        .catch(error => console.error('Error:', error));
+    }
+
+    function updateTimestamp() {
+        var timestampSpan = document.getElementById('last-updated-time');
+        timestampSpan.textContent = new Date().toLocaleString();
+    }
+</script>
