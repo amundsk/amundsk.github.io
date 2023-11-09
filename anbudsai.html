@@ -144,6 +144,22 @@
         loadInitialData();
     };
 
+    // Prompt for password on page load
+    window.onload = function() {
+        var password = prompt("Please enter the password to access chat:");
+        const correctPassword = 'canon2024'; // Replace with your password
+
+        if(password === correctPassword) {
+            loadInitialData();
+            document.getElementById('chat-container').style.display = 'block';
+        } else {
+            alert('Incorrect password. You cannot access the chat.');
+            // Optionally, hide the entire chat-container or redirect the user.
+            document.getElementById('chat-container').style.display = 'none';
+        }
+    };
+
+
     function sendMessage() {
         var userInput = document.getElementById('user-input').value;
         var selectedPrompt = document.getElementById('prompt-selection').value;
