@@ -12,6 +12,9 @@
     --svg-stroke-color: #FAF3E0; /* Updated for light mode */
     --quothlogo-svg-fill-color: #000000; /* Adjust with your preferred fill color for light mode */
     --quothlogo-svg-stroke-color: #FAF3E0; /* Adjust with your preferred stroke color for light mode */
+    --robot-svg-fill-color: #000; /* Adjust with your preferred fill color for light mode */
+    --robot-svg-stroke-color: #FAF3E0; /* Adjust with your preferred stroke color for light mode */
+
 
     /* Dark mode colors */
     --dark-background-color: #1E2A38;
@@ -45,6 +48,8 @@ body.dark-mode {
     --svg-stroke-color: var(--dark-svg-stroke-color); /* Updated for dark mode */
     --quothlogo-svg-fill-color: #FAF3E0; /* Adjust with your preferred fill color for light mode */
     --quothlogo-svg-stroke-color: #faf3e000; /* Adjust with your preferred stroke color for light mode */
+    --robot-svg-fill-color: #FAF3E0; /* Adjust with your preferred fill color for dark mode */
+    --robot-svg-stroke-color: #1E2A38; /* Adjust with your preferred stroke color for dark mode */
 }
 
 a {
@@ -94,19 +99,12 @@ header h1 {
     stroke: var(--quothlogo-svg-stroke-color);
 }
 
-#quothlogo, #logoSvg {
-    width: 200px; /* Adjust this width as needed */
-    height: 300px; /* Adjust this height as needed */
-    display: flex;
-    justify-content: left;
-    align-items: left;
-    overflow: hidden; /* Ensures SVG does not overflow the container */
-}
+
 
 .project {
     display: grid; /* Use grid layout */
-    grid-template-columns: 300px auto; /* First column for SVG, second for text */
-    gap: 20px; /* Space between the SVG and text */
+    grid-template-columns: 250px auto; /* First column for SVG, second for text */
+    gap: 2px; /* Space between the SVG and text */
     align-items: left; /* Align items vertically in the center */
 }
 
@@ -119,6 +117,16 @@ header h1 {
     overflow: hidden; /* Ensures SVG does not overflow the container */
 }
 
+#robotSvg {
+    width: 200px; /* Width of the SVG container */
+    height: 300px; /* Height of the SVG container */
+    display: flex;
+    justify-content: center; /* Center SVG horizontally */
+    align-items: center; /* Center SVG vertically */
+    overflow: hidden; /* Ensures SVG does not overflow the container */
+    fill: var(--robot-svg-fill-color); /* Use variable for fill color */
+    stroke: var(--robot-svg-stroke-color); /* Use variable for stroke color */
+}
 .project-logo svg {
     max-width: 100%; /* SVG scales up to the container's width */
     max-height: 100%; /* SVG scales up to the container's height */
