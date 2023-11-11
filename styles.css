@@ -32,27 +32,162 @@ header img {
     height: 100px;
 }
 
-aside {
-    margin: 20px 0;
-    padding: 10px;
+body,
+h1,
+h2,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
 }
 
-h1, h2, h3 {
-    margin-top: 20px;
+:root {
+    /* Font sizing */
+    font-size: 16px;
+    /* Base size. Can adjust for responsiveness using media queries if needed. */
+
+    /* Light mode colors */
+    --background-color: #FAF3E0;
+    --text-color: #000;
+    --link-color: #3498db;
+    --link-hover-color: #2980b9;
+    --box-background-color: #FAF3E0;
+    --header-background-color: #FAF3E0;
+    --svg-fill-color: #FFF;
+    --svg-stroke-color: #000;
 }
 
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-    body {
-        background-color: #121212;
-        color: #919399;
-    }
+body.dark-mode {
+    /* Dark mode colors */
+    --background-color: #1E2A38;
+    --text-color: #FAF3E0;
+    --link-color: #57A0D3;
+    --link-hover-color: #3F8ABF;
+    --box-background-color: #293D50;
+    --header-background-color: #1E2A38;
+    --svg-fill-color: var(--background-color);
+    --svg-stroke-color: var(--text-color);
+}
 
-    a {
-        color: rgb(110, 160, 160);
-    }
+#svgBackground {
+    fill: var(--background-color);
+}
 
-    header {
-        border-bottom: 1px solid #333;
-    }
+body {
+    font-family: 'Arial', sans-serif;
+    color: var(--text-color);
+    line-height: 1.6;
+    background-color: var(--background-color);
+    padding-top: 3rem;
+    /* Use rem for padding */
+
+}
+
+header {
+    padding: 0rem 0;
+    /* Scaled padding */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--header-background-color);
+    gap: 1.25rem;
+}
+
+header h1 {
+    font-size: 4rem;    
+    justify-content: center;
+    align-items: center;
+}
+
+header svg {
+    width: 100%;
+    /* Scaled width */
+    height: auto;
+}
+
+#logoSvg {
+    min-width: 20px;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* Ensures the div takes the full width of its parent */
+}
+
+
+#modeToggle {
+    position: fixed;
+    top: 1rem;
+    /* Offset from the top of the screen */
+    left: 1rem;
+    /* Offset from the left side of the screen */
+    background: none;
+    /* Remove any default background */
+    border: none;
+    /* Remove any default borders */
+    cursor: pointer;
+    /* Indicate interactivity */
+    z-index: 1000;
+    /* Ensure it's above other elements */
+}
+
+#modeToggle {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+#modeToggle svg {
+    display: none;
+    /* By default, hide all SVGs within the toggle button */
+    width: 3rem;
+    height: 3rem;
+    fill: var(--text-color) !important;
+    stroke: none !important;
+}
+
+#modeToggle svg.jam-sun {
+    display: inline-block;
+    /* Show only the sun SVG by default */
+    width: 3rem;
+    height: 3rem;
+    fill: var(--text-color) !important;
+    stroke: none !important;
+}
+
+#langToggle {
+    position: fixed;
+    top: 0.5rem;
+    /* Offset from the top of the screen */
+    right: 1.3rem;
+    /* Offset from the right side of the screen */
+    background: none;
+    /* Remove any default background */
+    border: none;
+    /* Remove any default borders */
+    cursor: pointer;
+    /* Indicate interactivity */
+    z-index: 1000;
+    /* Ensure it's above other elements */
+    display: flex;
+    /* Arrange child elements horizontally */
+    gap: 0rem;
+    /* Gap between the icons */
+}
+
+#langToggle .lang-icon {
+    font-size: 2.2rem;
+    /* Adjust this as needed for size */
+    font-weight: bold;
+    /* Makes the text bold */
+    color: var(--text-color);
+}
+
+#enIcon {
+    display: none;
+    /* Hide it by default */
 }

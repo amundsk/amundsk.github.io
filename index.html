@@ -7,6 +7,54 @@
     <link rel="stylesheet" href="styles.css">
     <title>Amund's hjemmeside</title>
     <style>
+        :root {
+            --background-color: #FFF;
+            --text-color: #000;
+            --link-color: #0000EE;
+            --hover-link-color: #551A8B;
+        }
+
+        body.dark-mode {
+            --background-color: #121212;
+            --text-color: #FFF;
+            --link-color: #BB86FC;
+            --hover-link-color: #3700B3;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--text-color);
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--hover-link-color);
+        }
+
+        header, section, footer {
+            margin: 20px;
+            padding: 10px;
+        }
+
+        /* Existing CSS */
+        aside {
+            margin-bottom: 20px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #bebebe; /* Light gray background */
+        }
         aside {
             margin-bottom: 20px;
         }
@@ -35,6 +83,22 @@
 </head>
 
 <body>
+    <button id="modeToggle">
+        <!-- Sun Icon -->
+        <svg width="24" height="24" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg"
+            preserveAspectRatio="xMinYMin" class="jam jam-sun">
+            <path
+                d="M10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-15a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V1a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM1 9h2a1 1 0 1 1 0 2H1a1 1 0 0 1 0-2zm16 0h2a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2zm.071-6.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zM5.757 14.243a1 1 0 0 1 0 1.414L4.343 17.07a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zM4.343 2.929l1.414 1.414a1 1 0 0 1-1.414 1.414L2.93 4.343A1 1 0 0 1 4.343 2.93zm11.314 11.314 1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 1 1 1.414-1.414z"
+                fill="var(--text-color)" />
+        </svg>
+
+        <!-- Moon Icon -->
+        <svg width="24" height="24" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+            <path
+                d="M29.2 26.72a12.07 12.07 0 0 1-6.3-22.28A13.68 13.68 0 0 0 19.49 4a14 14 0 0 0 0 28 13.82 13.82 0 0 0 10.9-5.34 11.71 11.71 0 0 1-1.19.06Z"
+                fill="var(--text-color)" />
+        </svg>
+    </button>
 
     <header>
         <div style="display: flex; align-items: center;">
@@ -138,7 +202,24 @@
         </article>
     </section>
 
-        <section id="projects-section">
-            <h1>🚀Prosjekter</h1>
-            <!-- Your content for the projects section goes here -->
-        </section>
+    <section id="projects-section">
+        <h1>🚀 Prosjekter</h1>
+        <div>
+            <h2>Quoth</h2>
+            <ul>
+                <li><a href="privacycpolicyquoth.html">Privacy Policy for Quoth</a></li>
+                <!-- Placeholder for the second link -->
+                <li><a href="#" id="app-store-link">App Store Link for Quoth (Coming Soon)</a></li>
+            </ul>
+        </div>
+        <!-- Additional content for the projects section can go here -->
+    </section>
+
+    <script>
+        const modeToggle = document.getElementById('modeToggle');
+        const body = document.body;
+
+        modeToggle.addEventListener('click', function() {
+            body.classList.toggle('dark-mode');
+        });
+    </script>
