@@ -1,79 +1,67 @@
-/* styles.css */
-
-/* Default light mode styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: rgb(255, 255, 255);
-    color: black;
-    margin: 0;
-    padding: 0;
-}
-
-a {
-    color: blue;
-    text-decoration: none;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-bottom: 1px solid #e0e0e0;
-}
-
-header img {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-}
-
-body,
-h1,
-h2,
-p,
-ul,
-li {
-    margin: 0;
-    padding: 0;
-}
-
 :root {
     /* Font sizing */
-    font-size: 16px;
-    /* Base size. Can adjust for responsiveness using media queries if needed. */
+    font-size: 100%; /* Equal to 16px by default, can be scaled by browser settings */
 
     /* Light mode colors */
     --background-color: #FAF3E0;
     --text-color: #000;
     --link-color: #3498db;
     --link-hover-color: #2980b9;
-    --box-background-color: #FAF3E0;
     --header-background-color: #FAF3E0;
-    --svg-fill-color: #FFF;
-    --svg-stroke-color: #000;
+    --svg-fill-color: #000; /* Updated for light mode */
+    --svg-stroke-color: #FAF3E0; /* Updated for light mode */
+    --quothlogo-svg-fill-color: #000000; /* Adjust with your preferred fill color for light mode */
+    --quothlogo-svg-stroke-color: #FAF3E0; /* Adjust with your preferred stroke color for light mode */
+
+    /* Dark mode colors */
+    --dark-background-color: #1E2A38;
+    --dark-text-color: #FAF3E0;
+    --dark-link-color: #bebebe;
+    --dark-link-hover-color: #9b97af;
+    --dark-header-background-color: #1E2A38;
+    --dark-svg-fill-color: #1E2A38; /* Added for dark mode */
+    --dark-svg-stroke-color: #FAF3E0; /* Added for dark mode */
 }
+
+body {
+    font-family: Arial, sans-serif;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    line-height: 1.6;
+    padding: 3rem; /* Adjusted padding */
+    max-width: 1080px; /* Max width for the entire page */
+    margin: auto; /* Centers the content within the page */
+}
+
 
 body.dark-mode {
-    /* Dark mode colors */
-    --background-color: #1E2A38;
-    --text-color: #FAF3E0;
-    --link-color: #57A0D3;
-    --link-hover-color: #3F8ABF;
-    --box-background-color: #293D50;
-    --header-background-color: #1E2A38;
-    --svg-fill-color: var(--background-color);
-    --svg-stroke-color: var(--text-color);
+    /* Updating variables for dark mode */
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
+    --link-color: var(--dark-link-color);
+    --link-hover-color: var(--dark-link-hover-color);
+    --header-background-color: var(--dark-header-background-color);
+    --svg-fill-color: var(--dark-svg-fill-color); /* Updated for dark mode */
+    --svg-stroke-color: var(--dark-svg-stroke-color); /* Updated for dark mode */
+    --quothlogo-svg-fill-color: #FAF3E0; /* Adjust with your preferred fill color for light mode */
+    --quothlogo-svg-stroke-color: #faf3e000; /* Adjust with your preferred stroke color for light mode */
 }
 
-#svgBackground {
-    fill: var(--background-color);
+a {
+    color: var(--link-color);
+    text-decoration: none;
 }
 
+a:hover {
+    text-decoration: underline;
+    color: var(--link-hover-color);
+}
+
+header img {
+    border-radius: 50%;
+    width: 6.25rem; /* Converted to rem */
+    height: 6.25rem; /* Converted to rem */
+}
 body {
     font-family: 'Arial', sans-serif;
     color: var(--text-color);
@@ -101,22 +89,48 @@ header h1 {
     align-items: center;
 }
 
-header svg {
-    width: 100%;
-    /* Scaled width */
-    height: auto;
+#quothlogo svg {
+    fill: var(--quothlogo-svg-fill-color);
+    stroke: var(--quothlogo-svg-stroke-color);
 }
 
-#logoSvg {
-    min-width: 20px;
-    max-width: 500px;
+#quothlogo, #logoSvg {
+    width: 200px; /* Adjust this width as needed */
+    height: 300px; /* Adjust this height as needed */
     display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    /* Ensures the div takes the full width of its parent */
+    justify-content: left;
+    align-items: left;
+    overflow: hidden; /* Ensures SVG does not overflow the container */
 }
 
+.project {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 300px auto; /* First column for SVG, second for text */
+    gap: 20px; /* Space between the SVG and text */
+    align-items: left; /* Align items vertically in the center */
+}
+
+#quothlogo, #logoSvg {
+    width: 200px; /* Width of the SVG container */
+    height: 300px; /* Height of the SVG container */
+    display: flex;
+    justify-content: center; /* Center SVG horizontally */
+    align-items: center; /* Center SVG vertically */
+    overflow: hidden; /* Ensures SVG does not overflow the container */
+}
+
+.project-logo svg {
+    max-width: 100%; /* SVG scales up to the container's width */
+    max-height: 100%; /* SVG scales up to the container's height */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.project-info {
+    /* Styling for the text part */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 #modeToggle {
     position: fixed;
@@ -134,12 +148,6 @@ header svg {
     /* Ensure it's above other elements */
 }
 
-#modeToggle {
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
 
 #modeToggle svg {
     display: none;

@@ -7,78 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <title>Amund's hjemmeside</title>
     <style>
-        :root {
-            --background-color: #FFF;
-            --text-color: #000;
-            --link-color: #0000EE;
-            --hover-link-color: #551A8B;
-        }
 
-        body.dark-mode {
-            --background-color: #121212;
-            --text-color: #FFF;
-            --link-color: #BB86FC;
-            --hover-link-color: #3700B3;
-        }
-
-        body {
-            background-color: var(--background-color);
-            color: var(--text-color);
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            color: var(--hover-link-color);
-        }
-
-        header, section, footer {
-            margin: 20px;
-            padding: 10px;
-        }
-
-        /* Existing CSS */
-        aside {
-            margin-bottom: 20px;
-        }
-
-        .header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #bebebe; /* Light gray background */
-        }
-        aside {
-            margin-bottom: 20px;
-        }
-                .header {
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 20px;
-            background-color: #bebebe; /* Light gray background */
-        }
-
-        .header img {
-            border-radius: 50%; /* Makes the image circular */
-            width: 150px;
-            height: 150px;
-            margin-right: 20px;
-        }
-
-        .contact-details {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
-        }
     </style>
 </head>
 
@@ -105,7 +34,7 @@
             <img src="profilepic.jpg" alt="Amund Strandå Kristiansen">
             <div style="margin-left: 20px;">
                 <aside>
-                    <a href="https://www.linkedin.com/in/ask96/">
+                    🌐<a href="https://www.linkedin.com/in/ask96/">
                         www.linkedin.com/in/ask96
                     </a>
                 </aside>
@@ -121,10 +50,10 @@
             <nav>
                 <a href="#cv-section">CV</a> | 
                 <a href="#skriverier-section">Skriverier</a> | 
-                <a href="#prosjekter">Projects</a> |
-                <a href="anbudsai.html">AnbudsAI</a> <!-- This is the new link to the Anbud page -->
+                <a href="#projects-section">Prosjekter</a>
             </nav>
     </header>
+    <section id="CV">
     <!-- CV Section -->
     <h1>💼 CV</h1>
 
@@ -186,39 +115,71 @@
     <h3><a href="https://www.bankaxept.no/" target="_blank">Bankaxept AS</a></h3>    <p><strong>Brukerstedshenvendelser</strong></p>
     <p>05.2018-07.2018 | Vikariat</p>
     <ul>
-       
+    </section>
+
     <section id="skriverier-section">
         <h1>✒️Skriverier</h1>
-        <!-- Article 1 -->
         <article>
-            <h2><a href="https://www.dn.no/innlegg/kunstig-intelligens/ai/ki/kunstig-intelligens-gir-hackere-storre-overtak/2-1-1441534" target="">(DN) Kunstig intelligens gir hackere større overtak</a></h2>
-            <p>Diskusjonsartikkel: Jeg mener generativ AI (cirka 2023) har en assymetri hvor det gjør angrep letter, men ikke nødvendigvis forsvar lettere i samme grad.</p>
+            <h3><a href="https://www.dn.no/innlegg/kunstig-intelligens/ai/ki/kunstig-intelligens-gir-hackere-storre-overtak/2-1-1441534" target="">(DN) Kunstig intelligens gir hackere større overtak</a></h2>
+            <p>Diskusjonsartikkel: Jeg mener generativ AI (cirka 2023) har en assymetri hvor det gjør angrep lettere, men ikke nødvendigvis forsvar lettere i samme grad.</p>
         </article>
-        
-        <!-- Article 2 -->
+
         <article>
-            <h2><a href="https://www.cw.no/debatt/printparadokset-har-sikkerhetsagendaen-blindsoner/2115338" target="_blank">(CW) Printparadokset: Har sikkerhetsagendaen blindsoner?</a></h2>
-            <p>Diskusjonsartikkel Artikkelen belyser utfordringene rundt printsikkerhet i bedrifter, og peker på spenningen mellom å plukke lavthengende frukt, og å utføre tiltak som er "sexye"</p>
+            <h3><a href="https://www.cw.no/debatt/printparadokset-har-sikkerhetsagendaen-blindsoner/2115338" target="_blank">(CW) Printparadokset: Har sikkerhetsagendaen blindsoner?</a></h2>
+            <p>Diskusjonsartikkel Artikkelen belyser utfordringene rundt printsikkerhet i bedrifter, og peker på spenningen mellom å plukke lavthengende frukt, og å utføre tiltak som er "hypet."</p>
         </article>
     </section>
 
+        <article>
+            <h3><a href="https://www.digi.no/artikler/debatt-sikkerhetsutfordringer-du-ikke-kan-ignorere/538461" target="_blank">(DIGI) Sikkerhetsutfordringer du ikke kan ignorere
+            </a></h2>
+            <p>Diskusjonsartikkel om sikkerhetsutfordringer som kan presse seg frem i forbindelse med forværrede økonomiske forhold og sikkerhetspolitisk situasjon. </p>
+        </article>
+    </section>
+    
     <section id="projects-section">
-        <h1>🚀 Prosjekter</h1>
-        <div>
-            <h2>Quoth</h2>
+    <h1>🚀 Prosjekter</h1>
+
+    <div class="project">
+
+        <div class="project-logo" id="quothlogo">
+            <?xml version="1.0" encoding="utf-8"?>
+            <svg viewBox="130.7097 -278.251 266.7596 257.0553" width="200" height="257.0553" xmlns="http://www.w3.org/2000/svg">
+              <path d="M 188.231 -275.686 C 170.745 -262.824 156.264 -245.912 146.373 -226.772 C 138.339 -211.211 133.512 -195.244 131.318 -176.982 C 130.507 -170.129 130.507 -153.791 131.318 -146.939 C 135.301 -113.824 148.972 -85.232 171.859 -62.345 C 194.746 -39.458 223.338 -25.787 256.453 -21.804 C 263.305 -20.993 279.643 -20.993 286.496 -21.804 C 304.758 -23.998 320.725 -28.825 336.286 -36.859 C 358.633 -48.404 377.874 -66.193 391.073 -87.46 C 393.74 -91.747 397.757 -99.005 397.453 -99.005 C 397.386 -99.005 396.542 -97.756 395.596 -96.203 C 392.356 -90.937 385.503 -82.295 381.385 -78.278 L 379.697 -76.624 L 365.688 -76.827 C 350.43 -77.063 348.911 -77.232 343.78 -79.122 C 339.966 -80.54 323.965 -88.911 323.965 -89.485 C 323.965 -89.62 325.282 -90.228 326.936 -90.869 C 335.206 -94.11 341.012 -98.059 350.971 -107.275 C 357.756 -113.554 359.612 -114.465 374.094 -118.921 C 381.25 -121.081 384.288 -122.229 385.503 -123.107 C 386.651 -123.95 388.103 -126.786 388.103 -128.17 C 388.069 -130.736 385.537 -133.875 383.14 -134.314 C 381.52 -134.618 379.225 -134.179 373.419 -132.491 C 370.819 -131.714 368.591 -131.208 368.456 -131.343 C 368.321 -131.478 368.591 -132.187 369.098 -132.93 C 371.697 -136.744 371.899 -141.47 369.604 -144.002 C 367.916 -145.858 364.473 -146.432 361.941 -145.285 C 360.287 -144.542 359.14 -143.259 357.519 -140.255 C 350.903 -128.103 347.932 -124.018 340.439 -116.693 C 331.797 -108.22 325.214 -104.102 317.889 -102.549 C 314.986 -101.941 306.446 -101.435 297.804 -101.401 C 294.462 -101.367 290.682 -101.266 289.365 -101.165 L 287.002 -100.962 L 283.559 -104.034 C 279.981 -107.241 279.069 -108.254 279.069 -109.131 C 279.069 -110.043 280.757 -111.359 284.133 -113.013 C 310.125 -125.942 328.489 -142.82 339.392 -163.817 C 344.523 -173.741 347.089 -182.282 347.494 -190.822 C 347.73 -196.561 347.122 -200.679 345.063 -206.789 C 344.287 -209.152 343.747 -211.076 343.882 -211.076 C 344.017 -211.076 344.793 -210.772 345.603 -210.401 C 346.413 -210.029 347.426 -209.726 347.865 -209.726 C 348.743 -209.726 348.945 -209.354 345.063 -214.62 C 344.253 -215.734 343.072 -217.793 342.464 -219.177 C 341.451 -221.506 341.35 -222.013 341.35 -225.253 C 341.35 -229.27 341.687 -230.283 343.915 -232.815 C 344.827 -233.828 345.907 -234.57 347.19 -235.11 C 349.08 -235.853 349.384 -235.887 361.266 -235.887 C 374.195 -235.887 375.309 -235.785 379.157 -234.03 C 380.912 -233.254 383.073 -232.342 383.242 -232.342 C 383.613 -232.342 383.309 -234.773 382.668 -237.136 C 380.98 -243.381 375.714 -249.119 368.423 -252.596 C 365.418 -254.048 357.08 -256.951 351.072 -258.672 L 348.608 -259.381 L 346.278 -262.554 C 341.991 -268.327 335.814 -271.939 327.375 -273.626 C 322.919 -274.504 316.066 -274.538 311.644 -273.761 C 306.176 -272.782 299.121 -269.812 292.403 -265.694 C 287.002 -262.352 283.762 -261.035 280.96 -261.035 L 279.576 -261.001 L 280.96 -259.752 C 281.736 -259.077 283.053 -258.098 283.93 -257.592 C 284.774 -257.086 285.483 -256.444 285.483 -256.208 C 285.483 -255.634 279.542 -249.862 276.875 -247.836 C 275.863 -247.06 275.019 -246.25 275.019 -246.014 C 275.019 -245.575 276.031 -245.17 277.28 -245.17 C 277.685 -245.17 278.124 -245.001 278.259 -244.798 C 278.36 -244.596 277.652 -242.638 276.605 -240.478 C 275.559 -238.317 273.905 -234.807 272.892 -232.68 C 271.913 -230.553 270.225 -227.515 269.179 -225.962 C 268.099 -224.41 267.255 -223.059 267.255 -222.992 C 267.255 -222.958 268.672 -222.857 270.394 -222.857 C 272.082 -222.823 274.479 -222.722 275.694 -222.587 C 277.719 -222.384 277.888 -222.317 277.989 -221.54 C 278.09 -220.359 276.706 -218.063 275.694 -217.793 C 275.221 -217.658 273.635 -217.557 272.149 -217.523 C 267.457 -217.456 260.065 -216.004 256.115 -214.384 C 253.82 -213.439 248.722 -210.671 246.663 -209.287 C 240.79 -205.303 232.08 -196.358 226.038 -188.121 C 213.379 -170.872 202.206 -149.47 190.526 -120.102 C 181.041 -96.236 179.488 -91.848 179.488 -88.945 C 179.488 -88.27 178.813 -85.029 177.969 -81.789 C 176.011 -74.261 175.741 -71.392 176.754 -69.164 C 177.125 -68.252 177.463 -67.375 177.463 -67.172 C 177.463 -66.835 167.032 -79.291 163.116 -84.32 C 157.175 -91.916 152.685 -100.456 149.276 -110.65 C 146.474 -119.022 141.782 -136.947 140.871 -142.719 C 138.035 -160.576 140.128 -181.843 147.284 -207.936 C 152.854 -228.258 162.576 -246.385 176.72 -262.723 C 178.543 -264.85 182.762 -269.238 186.037 -272.445 C 189.311 -275.618 191.944 -278.251 191.877 -278.251 C 191.809 -278.251 190.155 -277.103 188.231 -275.686 Z M 332.101 -267.01 C 334.43 -266.234 336.523 -265.086 336.354 -264.647 C 336.118 -263.905 331.628 -263.061 325.147 -262.521 C 314.48 -261.643 310.193 -260.596 304.893 -257.558 C 303.61 -256.816 302.294 -256.006 302.024 -255.803 C 301.754 -255.6 301.112 -255.263 300.606 -255.027 C 299.863 -254.723 299.593 -254.757 299.154 -255.162 C 298.344 -255.972 298.547 -256.883 299.863 -258.335 C 303.07 -261.879 311.577 -265.727 319.375 -267.145 C 323.358 -267.888 329.603 -267.787 332.101 -267.01 Z M 337.974 -257.862 C 341.114 -256.546 341.282 -252.427 338.312 -250.571 C 335.51 -248.849 331.898 -251.651 332.54 -255.094 C 332.776 -256.309 333.788 -257.423 335.105 -257.963 C 336.286 -258.436 336.658 -258.402 337.974 -257.862 Z M 288.015 -243.448 C 288.15 -243.279 287.711 -241.625 287.036 -239.836 C 285.382 -235.245 285.112 -233.794 285.179 -229.439 C 285.247 -225.321 285.011 -224.578 283.626 -224.578 C 281.871 -224.578 280.42 -228.089 280.42 -232.342 C 280.42 -235.279 280.96 -237.676 282.479 -241.288 L 283.559 -243.819 L 285.686 -243.819 C 286.833 -243.819 287.914 -243.651 288.015 -243.448 Z M 272.622 -103.359 C 274.479 -101.705 276.166 -100.017 276.369 -99.68 C 276.774 -98.903 276.234 -98.532 274.175 -98.194 C 273.432 -98.093 270.225 -97.35 267.052 -96.574 C 263.845 -95.831 261.01 -95.291 260.706 -95.393 C 260.267 -95.561 260.166 -96.169 260.166 -98.802 L 260.166 -102.009 L 261.28 -102.853 C 262.191 -103.562 268.369 -106.397 269.01 -106.431 C 269.111 -106.431 270.765 -105.047 272.622 -103.359 Z M 248.182 -94.144 L 248.182 -90.802 L 242.444 -88.54 C 234.511 -85.434 230.359 -83.477 221.245 -78.649 C 216.958 -76.32 210.915 -73.113 207.843 -71.493 C 204.772 -69.873 201.868 -68.252 201.362 -67.915 C 200.89 -67.544 200.383 -67.274 200.282 -67.274 C 200.181 -67.274 197.345 -65.754 193.969 -63.864 C 190.628 -62.008 187.792 -60.556 187.691 -60.623 C 187.353 -60.995 191.168 -67.814 192.45 -69.13 C 194.24 -70.953 204.67 -76.793 224.046 -86.785 C 233.836 -91.814 246.697 -97.688 247.676 -97.553 C 248.081 -97.485 248.182 -96.844 248.182 -94.144 Z M 305.231 -84.489 C 305.467 -84.118 304.555 -81.856 303.813 -81.046 C 303.509 -80.709 303.34 -80.371 303.408 -80.303 C 303.475 -80.236 305.568 -79.763 308.032 -79.257 C 313.805 -78.109 318.227 -76.354 326.598 -71.898 C 338.312 -65.687 341.519 -64.607 353.232 -62.885 C 355.696 -62.548 358.127 -62.041 358.633 -61.771 C 359.443 -61.332 361.097 -59.51 361.097 -59.037 C 361.097 -58.767 356.81 -55.459 353.063 -52.826 C 336.185 -41.011 314.784 -33.585 291.053 -31.289 C 286.293 -30.85 283.289 -30.783 277.213 -30.918 C 264.318 -31.289 261.077 -31.762 236.368 -36.859 C 229.144 -38.344 220.941 -40.032 218.139 -40.606 C 212.839 -41.72 203.624 -44.015 202.037 -44.623 C 200.788 -45.096 200.856 -45.804 202.274 -47.897 C 206.122 -53.467 220.84 -62.21 239.574 -70.042 C 251.76 -75.139 257.904 -77.367 264.487 -79.122 C 271.069 -80.877 272.419 -81.147 272.723 -80.844 C 272.858 -80.709 272.453 -79.696 271.812 -78.616 C 271.17 -77.535 270.63 -76.523 270.63 -76.354 C 270.63 -76.185 271.812 -76.118 273.263 -76.219 C 278.192 -76.489 281.669 -78.379 283.998 -82.025 L 285.179 -83.814 L 287.306 -83.814 C 288.454 -83.814 289.5 -83.713 289.635 -83.612 C 289.871 -83.342 288.892 -81.35 287.711 -79.797 C 286.631 -78.346 287.002 -77.738 288.994 -77.738 C 291.12 -77.738 294.564 -78.379 295.745 -78.987 C 297.433 -79.865 299.593 -81.755 300.403 -83.105 C 300.808 -83.78 301.315 -84.422 301.484 -84.557 C 302.024 -84.928 304.994 -84.894 305.231 -84.489 Z" style="stroke-linecap: round; stroke-miterlimit: 1; paint-order: stroke; stroke-width: 500px;"/>
+            </svg>
+        </div>        
+        <div class="project-info">
+            <h2>Quoth (iOS app)</h2>
+            <p>En enkel app for å ordne og vise sitater og "affirmations" på iPhone, via widgets for hjemmeskjerm, låseskjerm, og en companion-app for Watch OS. Jeg var tidlig ute med å implementere knapper for widgets etter at dette ble tillat i iOS 17</p>
             <ul>
-                <li><a href="privacycpolicyquoth.html">Privacy Policy for Quoth</a></li>
-                <!-- Placeholder for the second link -->
-                <li><a href="#" id="app-store-link">App Store Link for Quoth (Coming Soon)</a></li>
+                <li><a href="privacycpolicyquoth.html">Privacy Policy</a></li>
+                <li><a href="#" id="app-store-link">App Store</a></li>
             </ul>
         </div>
-        <!-- Additional content for the projects section can go here -->
-    </section>
+    </div>
+
+    <div class="project">
+
+        <div class="project-logo" id="logoSvg">
+                <?xml version="1.0" encoding="utf-8"?>
+                <svg viewBox="108.838 108.5216 315.9729 315.0095" width="300" height="315.0095" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+                  <path d="M 228.071 105.458 Q 245.887 95.172 263.703 105.458 L 365.12 164.011 Q 382.936 174.298 382.936 194.87 L 382.936 311.976 Q 382.936 332.549 365.12 342.835 L 263.703 401.388 Q 245.887 411.674 228.071 401.388 L 126.654 342.835 Q 108.838 332.549 108.838 311.976 L 108.838 194.87 Q 108.838 174.297 126.654 164.011 Z" style="fill: var(--svg-fill-color); stroke: var(--svg-stroke-color); paint-order: stroke; stroke-width: 28px;" bx:shape="n-gon 245.887 253.423 158.251 158.251 6 0.13 1@4d7f95fe"/>
+                  <path d="M 277.732 140.633 L 373.025 216.762 C 373.025 216.762 370.591 293.113 361.592 327.347 C 351.041 367.484 254.675 292.556 254.675 292.556 C 254.675 292.556 147.856 336.08 150.839 296.988 C 153.2 266.049 168.165 190.388 168.165 190.388 L 277.732 140.633 Z" style="fill: var(--svg-fill-color); stroke: var(--svg-stroke-color); paint-order: stroke; stroke-linecap: round; stroke-linejoin: round; stroke-width: 28px; transform-origin: 261.901px 239.902px;" transform="matrix(0.595160126686, 0.803606987, -0.803606987, 0.595160126686, 0.000037579808, -0.000009503774)"/>
+                  <rect x="46.786" y="108.307" width="102.107" height="36.985" style="fill: var(--svg-fill-color); stroke: var(--svg-stroke-color); stroke-linejoin: round; stroke-width: 12px; transform-origin: 97.84px 126.799px;" transform="matrix(0.856522142887, -0.516110002995, 0.516110002995, 0.856522142887, 74.353062726463, 169.773186562703)" rx="11.699" ry="11.699"/>
+                </svg>
+            </div>        
+            <div class="project-info">
+                <h2>Spade Consulting</h2>
+                <p>Hjemmeside for personlig selskap.</p>
+                <ul>
+                    <li><a href="https://spadeconsulting.no/">Spadeconsulting.no</a></li>
+                </ul>
+            </div>
+        </div>
 
     <script>
         const modeToggle = document.getElementById('modeToggle');
         const body = document.body;
-
         modeToggle.addEventListener('click', function() {
             body.classList.toggle('dark-mode');
         });
