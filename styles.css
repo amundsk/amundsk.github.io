@@ -88,11 +88,6 @@ header {
     gap: 1.25rem;
 }
 
-header h1 {
-    font-size: 4rem;    
-    justify-content: center;
-    align-items: center;
-}
 
 #quothlogo svg {
     fill: var(--quothlogo-svg-fill-color);

@@ -36,10 +36,9 @@
         </header>
 
 
-    <section>
-        <h2>Introduction</h2>
+
+        <h1>Introduction</h1>
         <p>This privacy policy applies to Quoth (the raven). Our policy explains the what, how, and why of the information we collect when you use Quoth. It also explains the specific ways we use and disclose that information.</p>
-    </section>
 
     <section>
         <h2>Data Controller Contact Information</h2>
@@ -110,7 +109,7 @@
     </section>
 
     <section>
-        <h2>Effective Date</h2>
+        <h3>Effective Date</h3>
         <p>This privacy policy is effective as of 11.11.2024</p>
     </section>
 
@@ -119,6 +118,21 @@
     </section>
     
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Check if the browser prefers dark mode
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                document.body.classList.add('dark-mode');
+            }
+
+            // Listen for changes in the preference
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+                if (e.matches) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+            });
+        });
         const modeToggle = document.getElementById('modeToggle');
         const body = document.body;
         const quothImage = document.getElementById('quothImage'); // Get the image element
