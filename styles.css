@@ -67,15 +67,6 @@ header img {
     width: 6.25rem; /* Converted to rem */
     height: 6.25rem; /* Converted to rem */
 }
-body {
-    font-family: 'Arial', sans-serif;
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--background-color);
-    padding-top: 3rem;
-    /* Use rem for padding */
-
-}
 
 header {
     padding: 0rem 0;
@@ -83,11 +74,10 @@ header {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
     background-color: var(--header-background-color);
     gap: 1.25rem;
 }
-
 
 #quothlogo svg {
     fill: var(--quothlogo-svg-fill-color);
@@ -95,17 +85,50 @@ header {
 }
 
 
+#CV, #skriverier-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns by default */
+    grid-gap: 20px; /* Space between grid items */
+}
+
+#CV > h1, #skriverier-section > h1 {
+    grid-column: 1 / -1; /* Span the header across all columns */
+    margin-bottom: 20px; 
+    margin-top: 20px; /* Spacing around the header */
+}
+
+.job-entry, .article-entry {
+    /* Additional styling for entries if needed */
+}
 
 .project {
     display: grid; /* Use grid layout */
     grid-template-columns: 250px auto; /* First column for SVG, second for text */
-    gap: 2px; /* Space between the SVG and text */
+    gap: 20px; /* Space between the SVG and text */
     align-items: left; /* Align items vertically in the center */
 }
 
-#quothlogo, #logoSvg {
-    width: 200px; /* Width of the SVG container */
-    height: 300px; /* Height of the SVG container */
+/* Media query for narrow screens */
+@media (max-width: 800px) {
+    #CV, #skriverier-section {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    .project {
+        grid-template-columns: 1fr; /* Adjust project layout for single column */
+    }
+}
+
+.project {
+    display: grid; /* Use grid layout */
+    grid-template-columns: 200px auto; /* First column for SVG, second for text */
+    gap: 20px; /* Space between the SVG and text */
+    align-items: left; /* Align items vertically in the center */
+}
+
+#quothlogo, #logoSvg, #robotSvg {
+    width: 200px; /* Fixed width of the SVG container */
+    height: 300px; /* Fixed height of the SVG container */
     display: flex;
     justify-content: center; /* Center SVG horizontally */
     align-items: center; /* Center SVG vertically */
@@ -113,15 +136,10 @@ header {
 }
 
 #robotSvg {
-    width: 200px; /* Width of the SVG container */
-    height: 300px; /* Height of the SVG container */
-    display: flex;
-    justify-content: center; /* Center SVG horizontally */
-    align-items: center; /* Center SVG vertically */
-    overflow: hidden; /* Ensures SVG does not overflow the container */
     fill: var(--robot-svg-fill-color); /* Use variable for fill color */
     stroke: var(--robot-svg-stroke-color); /* Use variable for stroke color */
 }
+
 .project-logo svg {
     max-width: 100%; /* SVG scales up to the container's width */
     max-height: 100%; /* SVG scales up to the container's height */
@@ -135,11 +153,12 @@ header {
     justify-content: center;
 }
 
+
 #modeToggle {
     position: fixed;
-    top: 1rem;
+    top: 0.4rem;
     /* Offset from the top of the screen */
-    left: 1rem;
+    left: 0.4rem;
     /* Offset from the left side of the screen */
     background: none;
     /* Remove any default background */
@@ -147,7 +166,6 @@ header {
     /* Remove any default borders */
     cursor: pointer;
     /* Indicate interactivity */
-    z-index: 1000;
     /* Ensure it's above other elements */
 }
 

@@ -12,22 +12,6 @@
 </head>
 
 <body>
-    <button id="modeToggle">
-        <!-- Sun Icon -->
-        <svg width="24" height="24" viewBox="-2 -2 24 24" xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="xMinYMin" class="jam jam-sun">
-            <path
-                d="M10 13a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 2a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm0-15a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0V1a1 1 0 0 1 1-1zm0 16a1 1 0 0 1 1 1v2a1 1 0 0 1-2 0v-2a1 1 0 0 1 1-1zM1 9h2a1 1 0 1 1 0 2H1a1 1 0 0 1 0-2zm16 0h2a1 1 0 0 1 0 2h-2a1 1 0 0 1 0-2zm.071-6.071a1 1 0 0 1 0 1.414l-1.414 1.414a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zM5.757 14.243a1 1 0 0 1 0 1.414L4.343 17.07a1 1 0 1 1-1.414-1.414l1.414-1.414a1 1 0 0 1 1.414 0zM4.343 2.929l1.414 1.414a1 1 0 0 1-1.414 1.414L2.93 4.343A1 1 0 0 1 4.343 2.93zm11.314 11.314 1.414 1.414a1 1 0 0 1-1.414 1.414l-1.414-1.414a1 1 0 1 1 1.414-1.414z"
-                fill="var(--text-color)" />
-        </svg>
-
-        <!-- Moon Icon -->
-        <svg width="24" height="24" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
-            <path
-                d="M29.2 26.72a12.07 12.07 0 0 1-6.3-22.28A13.68 13.68 0 0 0 19.49 4a14 14 0 0 0 0 28 13.82 13.82 0 0 0 10.9-5.34 11.71 11.71 0 0 1-1.19.06Z"
-                fill="var(--text-color)" />
-        </svg>
-    </button>
 
     <header>
         <div style="display: flex; align-items: center;">
@@ -53,14 +37,13 @@
                 <a href="#projects-section">Prosjekter</a>
             </nav>
     </header>
+    
     <section id="CV">
-    <!-- CV Section -->
-    <h1>💼 CV</h1>
-
-
-    <!-- Work Experience -->
+        <!-- CV Section -->
+        <h1 style="display: block; margin-bottom: 20px;">💼 CV</h1>    
 
     <!-- Canon Norge -->
+    <div class="job-entry">
     <h3><a href="https://www.canon.no/" target="_blank">Canon Norge</a></h3>
     <p><strong>Ansvarlig IT-sikkerhet og personvern</strong></p>
     <p>01.2022-</p>
@@ -75,8 +58,10 @@
         <li>Opplæring og bevisstgjøring av ansatte og samarbeidspartnere.</li>
         <li>Webinarer, kundedialog, og andre markedsaktiviteter for å synliggjøre Canons kompetanse og løsninger på området.</li>
     </ul>
+    </div>
 
     <!-- DSS- Departementenes sikkerhets- og servicetjeneste -->
+    <div class="job-entry">
     <h3><a href="https://www.dss.dep.no/" target="_blank">Departementenes sikkerhets- og serviceorganisasjon</a></h3>
     <p><strong>Rådgiver innenfor IT-sikkerhet og risikostyring</strong></p>
     <p>08.2020-01.2022</p>
@@ -88,8 +73,10 @@
         <li>Deltagelse i videreutvikling av ISO-styringssystem.</li>
         <li>Utforming og scoring av anbud.</li>
     </ul>
+    </div>
 
     <!-- Nordic Choice Hotels -->
+    <div class="job-entry">
     <h3><a href="https://www.strawberry.no/" target="_blank">Nordic Choice Hotels (Nå Strawberry)</a></h3>    <p><strong>Service Manager</strong></p>
     <p>09.2019-08.2020</p>
     <ul>
@@ -99,8 +86,9 @@
         <li>Adminoppgaver i G-suite, Active Directory, SCCM.</li>
         <li>Ledet utrulling av Point-of-Sale og tillgangsstyring under Nordic Choice' Vinterkonferansen 2020 (Største private arrangement i Skandinavia).</li>
     </ul>
-
+    </div>
     <!-- Sopra Steria -->
+    <div class="job-entry">
     <h3><a href="https://www.soprasteria.com/" target="_blank">Sopra Steria</a></h3>    <p><strong>Driftskonsulent</strong></p>
     <p>04.2019-09.2019</p>
     <ul>
@@ -110,33 +98,45 @@
         <li>Teamarbeid for å overholde strenge KPI-krav.</li>
         <li>Tickethåndtering i ServiceNow.</li>
     </ul>
-
+    </div>
     <!-- Bankaxept AS -->
+    <div class="job-entry">
     <h3><a href="https://www.bankaxept.no/" target="_blank">Bankaxept AS</a></h3>    <p><strong>Brukerstedshenvendelser</strong></p>
     <p>05.2018-07.2018 | Vikariat</p>
     <ul>
-    </section>
+    </div>
 
-    <section id="skriverier-section">
-        <h1>✒️Skriverier</h1>
-        <article>
-            <h3><a href="https://www.dn.no/innlegg/kunstig-intelligens/ai/ki/kunstig-intelligens-gir-hackere-storre-overtak/2-1-1441534" target="">(DN) Kunstig intelligens gir hackere større overtak</a></h2>
-            <p>Diskusjonsartikkel: Jeg mener generativ AI (cirka 2023) har en assymetri hvor det gjør angrep lettere, men ikke nødvendigvis forsvar lettere i samme grad.</p>
-        </article>
+</section>
 
-        <article>
-            <h3><a href="https://www.cw.no/debatt/printparadokset-har-sikkerhetsagendaen-blindsoner/2115338" target="_blank">(CW) Printparadokset: Har sikkerhetsagendaen blindsoner?</a></h2>
-            <p>Diskusjonsartikkel Artikkelen belyser utfordringene rundt printsikkerhet i bedrifter, og peker på spenningen mellom å plukke lavthengende frukt, og å utføre tiltak som er "hypet."</p>
-        </article>
-    </section>
+<section id="skriverier-section">
+    <h1>✒️Skriverier</h1>
 
-        <article>
-            <h3><a href="https://www.digi.no/artikler/debatt-sikkerhetsutfordringer-du-ikke-kan-ignorere/538461" target="_blank">(DIGI) Sikkerhetsutfordringer du ikke kan ignorere
-            </a></h2>
-            <p>Diskusjonsartikkel om sikkerhetsutfordringer som kan presse seg frem i forbindelse med forværrede økonomiske forhold og sikkerhetspolitisk situasjon. </p>
-        </article>
-    </section>
-    
+    <!-- Article 1 -->
+    <div class="article-entry">
+        <h3><a href="https://www.dn.no/innlegg/kunstig-intelligens/ai/ki/kunstig-intelligens-gir-hackere-storre-overtak/2-1-1441534" target="">(DN) Kunstig intelligens gir hackere større overtak</a></h3>
+        <p>Diskusjonsartikkel: Jeg mener generativ AI (cirka 2023) har en assymetri hvor det gjør angrep lettere, men ikke nødvendigvis forsvar lettere i samme grad.</p>
+    </div>
+
+    <!-- Article 2 -->
+    <div class="article-entry">
+        <h3><a href="https://www.cw.no/debatt/printparadokset-har-sikkerhetsagendaen-blindsoner/2115338" target="_blank">(CW) Printparadokset: Har sikkerhetsagendaen blindsoner?</a></h3>
+        <p>Diskusjonsartikkel Artikkelen belyser utfordringene rundt printsikkerhet i bedrifter, og peker på spenningen mellom å plukke lavthengende frukt, og å utføre tiltak som er "hypet."</p>
+    </div>
+
+    <!-- Article 3 -->
+    <div class="article-entry">
+        <h3><a href="https://www.digi.no/artikler/debatt-sikkerhetsutfordringer-du-ikke-kan-ignorere/538461" target="_blank">(DIGI) Sikkerhetsutfordringer du ikke kan ignorere</a></h3>
+        <p>Diskusjonsartikkel om sikkerhetsutfordringer som kan presse seg frem i forbindelse med forværrede økonomiske forhold og sikkerhetspolitisk situasjon. </p>
+    </div>
+
+    <!-- Article 4 -->
+    <div class="article-entry">
+        <h3><a href="https://www.digi.no/artikler/debatt-til-forsvar-for-algoritmene/539745" target="_blank">(DIGI) Til forsvar for algoritmene</a></h3>
+        <p>Diskusjonsartikkel med bakgrunn i Likestillings- og diskrimineringsombudet veileder til innebygget diskrimineringsvern. </p>
+    </div>
+
+</section>
+
     <section id="projects-section">
     <h1>🚀 Prosjekter</h1>
 
